@@ -39,7 +39,7 @@ class button_t {
         void *m_long_arg = NULL;
 
     public:
-        button_t(const uint8_t pin);
+        explicit button_t(const uint8_t pin);
         ~button_t();
 
         void on_single_click(button_callback_t callback, void *arg);
