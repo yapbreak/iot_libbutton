@@ -1,3 +1,6 @@
+[![pipeline status](https://gitlab.yapbreak.fr/iot/libbutton/badges/master/pipeline.svg)](https://gitlab.yapbreak.fr/iot/libbutton/commits/master)
+[![coverage report](https://gitlab.yapbreak.fr/iot/libbutton/badges/master/coverage.svg)](https://gitlab.yapbreak.fr/iot/libbutton/commits/master)
+
 This is a  simple button manager for any embedded board that supports Arduino
 framework.
 
