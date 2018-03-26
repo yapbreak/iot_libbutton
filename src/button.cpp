@@ -16,19 +16,19 @@ button_t::~button_t()
 
 }
 
-void button_t::on_single_click(button_callback_t callback, void *arg)
+void button_t::on_single_click(const button_callback_t &callback, void *arg)
 {
     m_single_click_callback = callback;
     m_single_arg = arg;
 }
 
-void button_t::on_double_click(button_callback_t callback, void *arg)
+void button_t::on_double_click(const button_callback_t &callback, void *arg)
 {
     m_double_click_callback = callback;
     m_double_arg = arg;
 }
 
-void button_t::on_long_click(button_callback_t callback, void *arg)
+void button_t::on_long_click(const button_callback_t &callback, void *arg)
 {
     m_long_click_callback = callback;
     m_long_arg = arg;

@@ -42,9 +42,9 @@ class button_t {
         explicit button_t(const uint8_t pin);
         ~button_t();
 
-        void on_single_click(button_callback_t callback, void *arg);
-        void on_double_click(button_callback_t callback, void *arg);
-        void on_long_click(button_callback_t callback, void *arg);
+        void on_single_click(const button_callback_t &callback, void *arg);
+        void on_double_click(const button_callback_t &callback, void *arg);
+        void on_long_click(const button_callback_t &callback, void *arg);
 
         void loop();
 };

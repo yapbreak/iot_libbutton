@@ -28,3 +28,18 @@ void setup() {
 void loop() {
     my_button.loop();
 }
+
+#ifndef ARDUINO
+int main(int argc, char *argv)
+{
+    (void) argc;
+    (void) argv;
+
+    setup();
+
+    for (;;)
+        loop();
+
+    return 0;
+}
+#endif

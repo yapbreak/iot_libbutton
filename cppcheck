@@ -32,4 +32,4 @@ fi
                   -DHAVE_SOCAT=1 \
                   "${OUTPUT_FLAGS[@]}" \
                   "$@" \
-                  src/
+                  src/ examples/
