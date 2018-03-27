@@ -1,8 +1,18 @@
+/**
+ * @file button.cpp
+ * @brief Button interface implementation using Arduino framework.
+ */
 #include <Arduino.h>
 
 #include "button.h"
 
+/**
+ * @brief Double click latency in ms
+ */
 #define DOUBLECLICK_TIMER   250
+/**
+ * @brief Long click duration in ms
+ */
 #define LONGCLICK_TIMER 2000
 
 button_t::button_t(const uint8_t pin)
