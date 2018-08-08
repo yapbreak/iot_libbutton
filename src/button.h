@@ -33,14 +33,15 @@
 #ifndef __BUTTON_H__
 #define __BUTTON_H__
 
-#include <functional>
+#include <stdint.h>
+#include <stdlib.h>
 
 /**
 * @brief Generic click callback function.
 *
 * User defined callback called on every click (single, double or long).
 */
-typedef std::function<void(void *)> button_callback_t;
+typedef void (*button_callback_t)(void *);
 
 /**
 * @brief Abstract a button.

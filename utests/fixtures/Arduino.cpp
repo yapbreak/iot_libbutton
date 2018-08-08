@@ -23,6 +23,7 @@ void analogWrite(uint8_t pin, uint8_t value)
     f->set_actual_analog_value(pin, value);
     f->call("analogWrite");
 }
+
 void digitalWrite(uint8_t pin, uint8_t value)
 {
     fixtures *f = fixtures::getInstance();
@@ -45,7 +46,14 @@ unsigned long millis()
 {
     fixtures *f = fixtures::getInstance();
 
-    return f->get_millis();
+    return static_cast<uint32_t>(f->get_millis());
+}
+
+unsigned long micros()
+{
+    fixtures *f = fixtures::getInstance();
+
+    return static_cast<uint32_t>(f->get_micros());
 }
 
 void pinMode(uint8_t pin, uint8_t mode)
