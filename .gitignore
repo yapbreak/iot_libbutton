@@ -25,6 +25,7 @@ ltmain.sh
 /ar-lib
 .deps/
 .libs/
+.dirstamp
 config.h
 stamp-h1
 *.log
@@ -95,3 +96,9 @@ build/
 # Doxygen
 doc/html
 doc/Doxyfile
+platformio.ini
+
+.pioenvs
+buttontest
+
+library.properties

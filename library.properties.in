@@ -1,0 +1,8 @@
+name=@PACKAGE_NAME@
+version=@PACKAGE_VERSION@
+author=YapBreak
+maintainer=YapBreak <@PACKAGE_BUGREPORT@>
+sentence=Button library for any board Arduino framework compatible.
+paragraph=Simple button library that allow simple control of buttons on Arduino boards.
+category=button
+url=@PACKAGE_URL@

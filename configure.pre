@@ -1,6 +1,6 @@
 AC_PREREQ([2.69])
 AC_INIT()
-AM_INIT_AUTOMAKE([-Wall -Werror])
+AM_INIT_AUTOMAKE([-Wall -Werror subdir-objects])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([src/button.h])
 AC_CONFIG_HEADERS([src/config.h])
@@ -129,6 +129,7 @@ AC_SUBST([extra_LDFLAGS])
 
 # Checks for header files
 AC_CHECK_HEADERS([stdint.h ])
+AC_CHECK_HEADERS([string.h ])
 
 # Checks for typedefs, structures, and compiler characteristics
 AC_C_INLINE
@@ -148,6 +149,11 @@ PKG_CHECK_MODULES([CPPUTEST], [cpputest], [have_cpputest=yes], [have_cpputest=no
 AM_CONDITIONAL([CPPUTEST], [test "x${have_cpputest}" = "xyes"])
 AS_IF([test "x$have_cpputest" = "xno"],
       [AC_MSG_WARN([Please install CppUTest package to get support of unit tests.])])
+PKG_CHECK_MODULES([ARDSIM], [ardsim >= 0.0.4], [have_ardsim=yes], [have_ardsim=no])
+AM_CONDITIONAL([ARDSIM], [test "x${have_ardsim}" = "xyes"])
+AS_IF([test "x$have_ardsim" = "xno"],
+      [AC_MSG_WARN([Please install Ardsim library from https://gitlab.yapbreak.fr/libraries/libardsim])],
+      [AC_DEFINE([HAVE_ARDSIM], [1], [Define if Arduino simulator is available])])
 
 # Check coverage tools
 AC_CHECK_PROG([gcovr], [gcovr], [yes])
@@ -159,16 +165,21 @@ AM_CONDITIONAL(LCOV, [test "x${lcov}" = "xyes"])
 AC_CHECK_PROG([genhtml], [genhtml], [yes])
 AM_CONDITIONAL(GENHTML, [test "x${genhtml}" = "xyes"])
 AM_CONDITIONAL(PERLGD, [perldoc -l GD])
+AC_CHECK_PROG([platformio], [platformio], [yes])
+AM_CONDITIONAL(PLATFORMIO, [test "x${platformio}" = "xyes"])
 
 # Check doxygen installation
 AC_CHECK_PROG([doxygen], [doxygen], [yes])
 AM_CONDITIONAL(DOXYGEN, [test "x${doxygen}" = "xyes"])
 
 # Generate files
-AC_CONFIG_FILES([Makefile
+AC_CONFIG_FILES([platformio.ini
+                 library.properties
+                 Makefile
                  utests/Makefile
                  utests/fixtures/Makefile
                  src/Makefile
+                 simulation/Makefile
                  doc/Makefile
                  doc/Doxyfile
                 ])

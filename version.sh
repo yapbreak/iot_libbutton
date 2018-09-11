@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PKGNAME="libbutton"
-REPORT="yapbreak+libcomserial@yapbreak.fr"
+REPORT="yapbreak+gitlab@yapbreak.fr"
 TARNAME="$PKGNAME"
 URL="https://gitlab.yapbreak.fr/iot/libbutton"
 

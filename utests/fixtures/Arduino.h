@@ -1,10 +1,16 @@
 #ifndef ARDUINO_H_NID3LW9T
 #define ARDUINO_H_NID3LW9T
 
+#ifdef __cplusplus
+
 #include <map>
-#include <CppUTest/TestHarness.h>
 #include <iostream>
 #include <string>
+
+extern "C"
+{
+#endif
+
 #include <stdint.h>
 
 /* Arduino fixtures */
@@ -28,7 +34,10 @@ void pinMode(uint8_t pin, uint8_t mode);
 *  Arduino timing  *
 ********************/
 unsigned long millis();
+unsigned long micros();
 
+#ifdef __cplusplus
+};
 
 /*******************
 *  Test fixtures  *
@@ -97,5 +106,7 @@ class fixtures
 
         void check() const;
 };
+
+#endif
 
 #endif /* end of include guard: ARDUINO_H_NID3LW9T */

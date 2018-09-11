@@ -2,7 +2,10 @@ ACLOCAL_AMFLAGS = -I m4
 
 include Makefile.common
 
-SOURCE_DIR = src
+SOURCE_DIR  = src
+if ARDSIM
+SOURCE_DIR += simulation
+endif
 if CPPUTEST
 SOURCE_DIR += utests
 endif
@@ -102,5 +105,25 @@ CLEANFILES = "coverage-report.info" "coverage-report2.info" "coverage-report" "c
 
 clean-local:
 	@rm -rf $(CLEANFILES)
+
+if PLATFORMIO
+
+firmware:
+	@platformio run
+
+upload: firmware
+	@platformio run --target upload
+
+else # PLATFORMIO
+
+firmware:
+	@(echo "Building firmware only allowed if platformio is available")
+
+upload: firmware
+
+endif
+
+ALLPHONY += firmware
+ALLPHONY += upload
 
 .PHONY: $(ALLPHONY)
