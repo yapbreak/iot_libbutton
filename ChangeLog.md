@@ -1,12 +1,39 @@
 # ChangeLog
 
+
 ## 1.1.0
 
-- Add support for Arduino UNO board
-- Add support for ESP8266 board
-- Implement support for PlatformIO in autotools system
+Simulation release
+
+2018-09-11	Adrien Oliva <olivaa+gitlab@yapbreak.fr>
+
+	* #    - <footer>: reference to gitlab issue with tag "GTLAB #6" build(release): Prepare release 1.1.0
+	* Merge branch '1-add-simulation-and-platformio-support' into 'master'
+	* GTLAB #1 feat(simulation) Add linux simulation and platformio support
+
+2018-05-24	Adrien Oliva <olivaa+gitlab@yapbreak.fr>
+
+	* Handle lcov-cobertura to produce jenkins coverage report
+
 
 ## 1.0.0
 
-- First functional version with its test
+(Lightweight tag)
 
+2018-03-27	Adrien Oliva <olivaa+gitlab@yapbreak.fr>
+
+	* Add doxygen documentation.
+
+2018-03-26	Adrien Oliva <olivaa+gitlab@yapbreak.fr>
+
+	* Fix cppcheck issues
+	* Add tests for all kind of clicks
+	* Add unittest for single short click callback
+
+2018-03-25	Adrien Oliva <olivaa+gitlab@yapbreak.fr>
+
+	* Add basic creation and deletion tests
+	* Scale Doxygen image.
+	* Add stub test
+	* Add autotools and utests framework
+	* Initial import
