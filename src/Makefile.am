@@ -5,6 +5,7 @@ include $(top_srcdir)/Makefile.common
 lib_LTLIBRARIES = libbutton.la
 libbutton_la_SOURCES  = button.h
 libbutton_la_SOURCES += button.cpp
+libbutton_la_LDFLAGS = $(LIBVERSION)
 
 include_HEADERS = button.h
 libdir = $(prefix)/lib/yapiot/
