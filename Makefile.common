@@ -15,5 +15,3 @@ AM_CXXFLAGS += -I$(top_builddir)/src
 AM_CXXFLAGS += -include $(top_builddir)/src/config.h
 AM_CXXFLAGS += $(ARDSIM_CFLAGS)
 AM_LDFLAGS += -L$(top_builddir)
-
-

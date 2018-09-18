@@ -7,3 +7,8 @@ libbutton_la_SOURCES  = button.h
 libbutton_la_SOURCES += button.cpp
 
 include_HEADERS = button.h
+libdir = $(prefix)/lib/yapiot/
+includedir = $(prefix)/include/yapiot/libbutton
+
+libledextradir = $(prefix)/lib/pkgconfig
+libledextra_DATA = button.pc

@@ -1,5 +1,3 @@
-#if defined(TESTFIRMWARE)
-
 #include <Arduino.h>
 
 #include "button.h"
@@ -57,5 +55,3 @@ extern "C" void setup() {
 extern "C" void loop() {
     my_button.loop();
 }
-
-#endif

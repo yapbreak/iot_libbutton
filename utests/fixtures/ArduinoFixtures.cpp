@@ -2,7 +2,7 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
-#include "Arduino.h"
+#include "ArduinoFixtures.h"
 #include <CppUTest/TestHarness.h>
 
 fixtures *fixtures::s_fixtures;
@@ -15,7 +15,7 @@ void fixtures::registerInstance(fixtures &f)
     s_fixtures = &f;
 }
 
-void analogWrite(uint8_t pin, uint8_t value)
+void analogWrite(uint8_t pin, int value)
 {
     fixtures *f = fixtures::getInstance();
     BYTES_EQUAL(OUTPUT, f->get_actual_pin_mode(pin));

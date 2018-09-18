@@ -3,7 +3,7 @@
 
 #include <CppUTest/TestHarness.h>
 #include "button.h"
-#include "Arduino.h"
+#include "ArduinoFixtures.h"
 
 TEST_GROUP(basic)
 {

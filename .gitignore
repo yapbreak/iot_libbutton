@@ -102,3 +102,5 @@ platformio.ini
 buttontest
 
 library.properties
+library.json
+*.pc

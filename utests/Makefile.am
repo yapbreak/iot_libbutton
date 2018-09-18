@@ -6,20 +6,12 @@ SUBDIRS = fixtures
 
 TESTS = ut_button.xtest
 
-noinst_PROGRAMS = $(TESTS)
-
 check_PROGRAMS = $(TESTS)
-
-lib_LTLIBRARIES = libbutton_utests.la
-libbutton_utests_la_CFLAGS = $(TESTCFLAGS)
-libbutton_utests_la_CXXFLAGS = $(TESTCXXFLAGS)
-libbutton_utests_la_SOURCES  = ../src/button.h
-libbutton_utests_la_SOURCES += ../src/button.cpp
 
 ut_button_xtest_SOURCES = ut_button.h
 ut_button_xtest_SOURCES += main.cpp
 ut_button_xtest_CFLAGS = $(TESTCFLAGS)
 ut_button_xtest_CXXFLAGS = $(TESTCXXFLAGS)
 ut_button_xtest_LDFLAGS = $(TESTLDFLAGS)
-ut_button_xtest_LDADD  = $(top_builddir)/utests/libbutton_utests.la
+ut_button_xtest_LDADD  = $(top_builddir)/src/libbutton.la
 ut_button_xtest_LDADD += $(top_builddir)/utests/fixtures/libfixtures.la

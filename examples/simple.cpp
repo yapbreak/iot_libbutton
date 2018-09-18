@@ -35,7 +35,7 @@ void doubleclick(void *arg)
 * @brief Arduino function to setup and initialize everything.
 */
 // cppcheck-suppress unusedFunction
-void setup() {
+extern "C" void setup() {
     Serial.begin(115200);
 
     my_button.on_single_click(click, NULL);
@@ -48,7 +48,7 @@ void setup() {
 /**
 * @brief Arduino function called in the main loop.
 */
-void loop() {
+extern "C" void loop() {
     my_button.loop();
 }
 /// [Click]
