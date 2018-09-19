@@ -135,5 +135,12 @@ ALLPHONY += upload
 
 .PHONY: $(ALLPHONY)
 
-datadir = $(prefix)/share/@PACKAGE_NAME@/examples
-dist_data_DATA = examples/simple.cpp
+sampledir = $(prefix)/share/@PACKAGE_NAME@/examples
+dist_sample_DATA = examples/simple.cpp
+datadir = $(prefix)/share/@PACKAGE_NAME@
+dist_data_DATA = library.json
+
+repack: distcheck
+	tar xzf @PACKAGE_NAME@-@PACKAGE_VERSION@.tar.gz
+	(cd @PACKAGE_NAME@-@PACKAGE_VERSION@/ && tar czf ../@PACKAGE_NAME@-@PACKAGE_VERSION@-repack.tar.gz *)
+	rm -rf @PACKAGE_NAME@-@PACKAGE_VERSION@
